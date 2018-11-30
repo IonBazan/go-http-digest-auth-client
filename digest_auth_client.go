@@ -5,7 +5,6 @@ import (
 	"crypto/tls"
 	"fmt"
 	"net/http"
-	"time"
 )
 
 type DigestRequest struct {
@@ -52,7 +51,7 @@ func (dr *DigestRequest) getHTTPClient() *http.Client {
 	}
 
 	return &http.Client{
-		Timeout: 0 * time.Second,
+		Timeout: 0,
 		Transport: &http.Transport{
 			TLSClientConfig: &tlsConfig,
 		},
