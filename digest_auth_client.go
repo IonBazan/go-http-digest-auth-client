@@ -52,7 +52,7 @@ func (dr *DigestRequest) getHTTPClient() *http.Client {
 	}
 
 	return &http.Client{
-		Timeout: 30 * time.Second,
+		Timeout: 0,
 		Transport: &http.Transport{
 			TLSClientConfig: &tlsConfig,
 		},
